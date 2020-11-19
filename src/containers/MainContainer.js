@@ -2,7 +2,6 @@ import React from "react";
 
 function MainContainer(props) {
   let { user } = props;
-  console.log("User in MainContainer", user);
 
   return (
     <div>
