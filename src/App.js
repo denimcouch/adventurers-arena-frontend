@@ -64,7 +64,7 @@ class App extends Component {
             <Route exact path="/">
               {" "}
               {this.state.loggedIn ? (
-                <Redirect to="/dashboard" />
+                <Redirect to="/main" />
               ) : (
                 <LogInContainer
                   signUpUser={this.signUpUser}
@@ -72,7 +72,7 @@ class App extends Component {
                 />
               )}{" "}
             </Route>
-            <Route path="/dashboard">
+            <Route path="/main">
               <MainContainer user={this.state.user} />{" "}
             </Route>
           </Switch>
