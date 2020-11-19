@@ -35,11 +35,24 @@ class App extends Component {
     })
   }
 
+  logInUser = (userObj) => {
+    const {username} = userObj.user
+    fetch(usersUrl + `/login/${username}`)
+    .then(res => res.json())
+    .then(userData => {
+      console.log("User from logInUser", userData)
+      let user = userData[0]
+      this.setState({
+        user
+      })
+    })
+  }
+
   render() {
     return (
       <div>
         <h1>Adventurer's Arena</h1>
-        <LogInContainer signUpUser={this.signUpUser} />
+        <LogInContainer signUpUser={this.signUpUser} logInUser={this.logInUser} />
         <MainContainer user={this.state.user} />
       </div>
     );

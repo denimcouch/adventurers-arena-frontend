@@ -38,15 +38,15 @@ class SignUp extends Component {
         <Form id="sign-up-form" onSubmit={(e) => this.handleSubmit(e)} >
           <Form.Field>
             <label>Username</label>
-            <input placeholder="Username" name="username" onChange={(e) => this.handleChange(e.target)} />
+            <Form.Input icon="user" iconPosition='left' placeholder="Username" name="username" onChange={(e) => this.handleChange(e.target)} />
           </Form.Field>
           <Form.Field>
             <label>Email</label>
-            <input placeholder="Email" name="email" onChange={(e) => this.handleChange(e.target)} />
+            <Form.Input icon="mail" iconPosition='left' placeholder="Email" name="email" onChange={(e) => this.handleChange(e.target)} />
           </Form.Field>
           <Form.Field>
             <label>Password</label>
-            <input type="password" placeholder="Password" name="password" onChange={(e) => this.handleChange(e.target)} />
+            <Form.Input icon="lock" iconPosition='left' type="password" placeholder="Password" name="password" onChange={(e) => this.handleChange(e.target)} />
           </Form.Field>
           <Form.Button type='submit' primary>Create Account</Form.Button>
         </Form>

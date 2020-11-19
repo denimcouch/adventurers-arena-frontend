@@ -4,12 +4,12 @@ import SignUp from '../components/SignUp'
 
 function LogInContainer (props) {
 
-    const {signUpUser} = props
+    const {signUpUser, logInUser} = props
 
     return(
         <div>
             <h1>LogInContainer</h1>
-            <LogIn />
+            <LogIn logInUser={logInUser} />
             <SignUp signUpUser={signUpUser} />
         </div>
     )
