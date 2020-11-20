@@ -1,3 +1,11 @@
 .log-in-container {
   
 }
+
+.monster-table{
+    width: 800px;
+    height: 500px;
+    overflow-y: scroll;
+    padding: 10px
+}
+

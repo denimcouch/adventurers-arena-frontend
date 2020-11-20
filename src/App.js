@@ -10,6 +10,7 @@ import MainContainer from "./containers/MainContainer";
 import "./App.css";
 
 const usersUrl = "http://localhost:3000/api/v1/users";
+const monstersURL = "http://localhost:3000/api/v1/monsters"
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,19 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       user: {},
+      monsters: []
     };
+  }
+
+  componentDidMount () {
+    fetch(monstersURL)
+    .then(res => res.json())
+    .then(monsters => {
+      console.log(monsters)
+      this.setState({
+        monsters
+      })
+    })
   }
 
   signUpUser = (userObj) => {
@@ -73,7 +86,7 @@ class App extends Component {
               )}{" "}
             </Route>
             <Route path="/main">
-              <MainContainer user={this.state.user} />{" "}
+              <MainContainer user={this.state.user} monsters={this.state.monsters} />{" "}
             </Route>
           </Switch>
         </div>

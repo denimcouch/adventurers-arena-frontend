@@ -1,13 +1,13 @@
 import React from "react";
+import MonstersContainer from '../containers/MonstersContainer'
 
 function MainContainer(props) {
-  let { user } = props;
-  console.log("User in MainContainer", user);
+  let { user, monsters } = props;
 
   return (
-    <div>
+    <div className="main-container" >
       <h1>Main Container</h1>
-      <h3>Username: {user.username}</h3>
+      <MonstersContainer monsters={monsters} />
     </div>
   );
 }
