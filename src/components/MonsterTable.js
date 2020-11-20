@@ -1,5 +1,6 @@
 import React from "react";
 import { Header, Table, Button } from "semantic-ui-react";
+import Monster from './Monster'
 
 function MonsterTable(props) {
   let { monsters } = props;
@@ -9,6 +10,21 @@ function MonsterTable(props) {
     return array
       .map((string) => string.charAt(0).toUpperCase() + string.slice(1))
       .join(" ");
+  }
+
+  function formatEXP(number) {
+    let numString = number.toString()
+    
+    switch(numString.length){
+        case 4:
+            return numString.slice(0,1) + ',' + numString.slice(1);
+        case 5:
+            return numString.slice(0,2) + ',' + numString.slice(2);
+        case 6:
+            return numString.slice(0,3) + ',' + numString.slice(3);
+        default:
+            return numString
+    }
   }
 
   return (
@@ -36,11 +52,11 @@ function MonsterTable(props) {
                       +
                     </Button>{" "}
                   </Table.Cell>
-                  <Table.Cell singleLine>{monster.name}</Table.Cell>
+                  <Table.Cell singleLine>{<Monster monster={monster} xp={formatEXP(monster.exp)} />}</Table.Cell>
                   <Table.Cell>{monster.challenge_rating}</Table.Cell>
                   <Table.Cell>{capitalizeWords(monster.mon_type)}</Table.Cell>
                   <Table.Cell>{capitalizeWords(monster.alignment)}</Table.Cell>
-                  <Table.Cell>{monster.exp}</Table.Cell>
+                  <Table.Cell>{formatEXP(monster.exp)}</Table.Cell>
                 </Table.Row>
               );
             })}
