@@ -5,6 +5,7 @@ function MonsterSearchBar(props) {
     setSearchTerm,
     setSizeFilter,
     setTypeFilter,
+    setAlignFilter,
     sizeOptions,
     alignmentOptions,
     crOptions,
@@ -36,7 +37,7 @@ function MonsterSearchBar(props) {
         <br />
         <label>
           <strong>Filter by Alignment: </strong>
-          <select onChange={(e) => console.log(e.target.value)}>
+          <select onChange={(e) => setAlignFilter(e.target.value)}>
             <option value="">All</option>
             {alignmentOptions.map((align) => (
               <option value={align}>{align}</option>

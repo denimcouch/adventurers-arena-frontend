@@ -24,6 +24,7 @@ class MonstersContainer extends Component {
   setTypeFilter = (typeFilter) => {
     this.setState({ typeFilter });
   };
+  setAlignFilter = (alignFilter) => this.setState({alignFilter})
 
   //uses searchTerm to find Monsters
   searchMonsters = () => {
@@ -77,7 +78,8 @@ class MonstersContainer extends Component {
     let monsters = this.searchMonsters().filter(
       (monster) =>
         monster.size.includes(this.state.sizeFilter) &&
-        monster.mon_type.includes(this.state.typeFilter)
+        monster.mon_type.includes(this.state.typeFilter) &&
+        monster.alignment.includes(this.state.alignFilter)
     );
     return (
       <div>
@@ -86,6 +88,7 @@ class MonstersContainer extends Component {
           setSearchTerm={this.setSearchTerm}
           setSizeFilter={this.setSizeFilter}
           setTypeFilter={this.setTypeFilter}
+          setAlignFilter={this.setAlignFilter}
           sizeOptions={this.sizeOptions()}
           alignmentOptions={this.alignmentOptions()}
           crOptions={this.crOptions()}
