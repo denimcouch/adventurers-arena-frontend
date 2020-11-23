@@ -27,7 +27,7 @@ class App extends Component {
     fetch(monstersURL)
     .then(res => res.json())
     .then(monsters => {
-      console.log(monsters)
+      // console.log(monsters)
       this.setState({
         monsters
       })
@@ -46,7 +46,7 @@ class App extends Component {
     fetch(usersUrl, userOptions)
       .then((res) => res.json())
       .then((user) => {
-        console.log("New user from POST", user);
+        // console.log("New user from POST", user);
         debugger;
         this.setState({
           loggedIn: !this.state.loggedIn,
@@ -60,7 +60,7 @@ class App extends Component {
     fetch(usersUrl + `/login/${username}`)
       .then((res) => res.json())
       .then((userData) => {
-        console.log("User from logInUser", userData);
+        // console.log("User from logInUser", userData);
         let user = userData[0];
         this.setState({
           loggedIn: !this.state.loggedIn,
