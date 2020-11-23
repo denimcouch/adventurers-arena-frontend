@@ -8,8 +8,8 @@ class MonstersContainer extends Component {
     sizeFilter: "",
     typeFilter: "",
     alignFilter: "",
-    minCR: "",
-    maxCR: "",
+    minCR: 0,
+    maxCR: 30,
   };
 
   //updating state with the following functions
@@ -25,6 +25,8 @@ class MonstersContainer extends Component {
     this.setState({ typeFilter });
   };
   setAlignFilter = (alignFilter) => this.setState({alignFilter})
+  setMinCR = (minCR) => this.setState({minCR})
+  setMaxCR = (maxCR) => this.setState({maxCR})
 
   //uses searchTerm to find Monsters
   searchMonsters = () => {
@@ -79,7 +81,9 @@ class MonstersContainer extends Component {
       (monster) =>
         monster.size.includes(this.state.sizeFilter) &&
         monster.mon_type.includes(this.state.typeFilter) &&
-        monster.alignment.includes(this.state.alignFilter)
+        monster.alignment.includes(this.state.alignFilter) &&
+        monster.challenge_rating >= this.state.minCR &&
+        monster.challenge_rating <= this.state.maxCR
     );
     return (
       <div>
@@ -89,6 +93,8 @@ class MonstersContainer extends Component {
           setSizeFilter={this.setSizeFilter}
           setTypeFilter={this.setTypeFilter}
           setAlignFilter={this.setAlignFilter}
+          setMinCR={this.setMinCR}
+          setMaxCR={this.setMaxCR}
           sizeOptions={this.sizeOptions()}
           alignmentOptions={this.alignmentOptions()}
           crOptions={this.crOptions()}

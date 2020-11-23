@@ -6,6 +6,8 @@ function MonsterSearchBar(props) {
     setSizeFilter,
     setTypeFilter,
     setAlignFilter,
+    setMinCR,
+    setMaxCR,
     sizeOptions,
     alignmentOptions,
     crOptions,
@@ -47,7 +49,7 @@ function MonsterSearchBar(props) {
         <br />
         <label>
           <strong>Min CR: </strong>
-          <select onChange={(e) => console.log(e.target.value)}>
+          <select onChange={(e) => setMinCR(e.target.value)}>
             <option value="">All</option>
             {crOptions.map((cr) => (
               <option value={cr}>{cr}</option>
@@ -56,8 +58,8 @@ function MonsterSearchBar(props) {
         </label>{" "}
         <label>
           <strong>Max CR: </strong>
-          <select onChange={(e) => console.log(e.target.value)}>
-            <option value="">All</option>
+          <select onChange={(e) => setMaxCR(e.target.value)}>
+            <option value='30'>All</option>
             {crOptions.map((cr) => (
               <option value={cr}>{cr}</option>
             ))}
