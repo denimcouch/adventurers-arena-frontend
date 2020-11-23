@@ -86,8 +86,7 @@ class MonstersContainer extends Component {
         monster.challenge_rating <= this.state.maxCR
     );
     return (
-      <div>
-        <h2>Monsters Container</h2>
+      <div className="monsters-container">
         <MonsterSearchBar
           setSearchTerm={this.setSearchTerm}
           setSizeFilter={this.setSizeFilter}
