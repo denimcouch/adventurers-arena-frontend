@@ -38,7 +38,6 @@ function MonsterTable(props) {
               <Table.HeaderCell>Name</Table.HeaderCell>
               <Table.HeaderCell>CR</Table.HeaderCell>
               <Table.HeaderCell>Type</Table.HeaderCell>
-              <Table.HeaderCell>Alignment</Table.HeaderCell>
               <Table.HeaderCell>Experience</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
@@ -55,7 +54,6 @@ function MonsterTable(props) {
                   <Table.Cell singleLine>{<Monster monster={monster} xp={formatEXP(monster.exp)} />}</Table.Cell>
                   <Table.Cell>{monster.challenge_rating}</Table.Cell>
                   <Table.Cell>{capitalizeWords(monster.mon_type)}</Table.Cell>
-                  <Table.Cell>{capitalizeWords(monster.alignment)}</Table.Cell>
                   <Table.Cell>{formatEXP(monster.exp)}</Table.Cell>
                 </Table.Row>
               );
