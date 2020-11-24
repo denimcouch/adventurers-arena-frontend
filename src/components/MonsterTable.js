@@ -2,6 +2,21 @@ import React from "react";
 import { Header, Table, Button } from "semantic-ui-react";
 import Monster from './Monster'
 
+export function formatEXP(number) {
+  let numString = number.toString()
+  
+  switch(numString.length){
+      case 4:
+          return numString.slice(0,1) + ',' + numString.slice(1);
+      case 5:
+          return numString.slice(0,2) + ',' + numString.slice(2);
+      case 6:
+          return numString.slice(0,3) + ',' + numString.slice(3);
+      default:
+          return numString
+  }
+}
+
 function MonsterTable(props) {
   let { monsters } = props;
 
@@ -12,20 +27,7 @@ function MonsterTable(props) {
       .join(" ");
   }
 
-  function formatEXP(number) {
-    let numString = number.toString()
-    
-    switch(numString.length){
-        case 4:
-            return numString.slice(0,1) + ',' + numString.slice(1);
-        case 5:
-            return numString.slice(0,2) + ',' + numString.slice(2);
-        case 6:
-            return numString.slice(0,3) + ',' + numString.slice(3);
-        default:
-            return numString
-    }
-  }
+  
 
   return (
     <div className="monster-table-container">
