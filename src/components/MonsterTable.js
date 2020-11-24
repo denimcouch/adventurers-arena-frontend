@@ -18,7 +18,7 @@ export function formatEXP(number) {
 }
 
 function MonsterTable(props) {
-  let { monsters } = props;
+  let { monsters, chooseMonster } = props;
 
   function capitalizeWords(string) {
     const array = string.split(" ");
@@ -49,11 +49,11 @@ function MonsterTable(props) {
               return (
                 <Table.Row key={monster.id}>
                   <Table.Cell>
-                    <Button size="medium" color="green">
+                    <Button size="medium" color="green" onClick={(e) => chooseMonster(monster)}>
                       +
                     </Button>{" "}
                   </Table.Cell>
-                  <Table.Cell singleLine>{<Monster monster={monster} xp={formatEXP(monster.exp)} />}</Table.Cell>
+                  <Table.Cell singleLine>{<Monster monster={monster} xp={formatEXP(monster.exp)} key={monster.id} />}</Table.Cell>
                   <Table.Cell>{monster.challenge_rating}</Table.Cell>
                   <Table.Cell>{capitalizeWords(monster.mon_type)}</Table.Cell>
                   <Table.Cell>{formatEXP(monster.exp)}</Table.Cell>

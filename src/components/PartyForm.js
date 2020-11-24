@@ -47,8 +47,8 @@ class PartyForm extends Component {
                 );
               })}
             </select>
-          </label>
-          <br />
+          </label>{" "}
+          
           <label>
             <strong>Level: </strong>
             <select onChange={(e) => this.props.setLevel(e.target.value)}>

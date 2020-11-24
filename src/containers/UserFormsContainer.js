@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PartyForm from "../components/PartyForm";
+import EncounterForm from '../components/EncounterForm'
 
 class UserFormsContainer extends Component {
   constructor() {
@@ -97,21 +98,22 @@ class UserFormsContainer extends Component {
       exp: [2800, 5700, 8500, 12700],
     },
   ];
-  
-  characterEXP = (partySize, level) => {
+
+  partyEXP = (partySize, level) => {
     const levelObj = this.expThreshold.find((el) => el.level === level);
     return levelObj.exp.map((num) => num * partySize);
   };
 
   render() {
-    // console.log('Return value of characterEXP', this.characterEXP(this.state.partySize, this.state.level))
+    // console.log('Return value of partyEXP', this.partyEXP(this.state.partySize, this.state.level))
     return (
       <div className="user-forms-container">
         <PartyForm
           setPartySize={this.setPartySize}
           setLevel={this.setLevel}
-          partyEXP={this.characterEXP(this.state.partySize, this.state.level)}
+          partyEXP={this.partyEXP(this.state.partySize, this.state.level)}
         />
+        <EncounterForm chosenMonsters={this.props.chosenMonsters} />
       </div>
     );
   }
