@@ -1,28 +1,21 @@
 import React from "react";
-import { Divider } from "semantic-ui-react";
+import { Segment, Header, Button } from "semantic-ui-react";
 import { formatEXP } from "../components/MonsterTable";
 
 function currentEncounter(monster) {
   return (
-    <div className="current-encounter-row">
-      <div className="current-encounter monster-info">
-        <span>{monster.name}</span>
-        <div>
-          <span class="current-encounter monster-cr">
-            CR: {monster.challenge_rating}
-          </span>{" "}
-          <span class="current-encounter monster-cr">
-            EXP: {formatEXP(monster.exp)}
-          </span>
-        </div>
-        <div className="current-encounter monster-qty-col"></div>
+    <Segment>
+      <Header as="h4">{monster.name}</Header>
+      <div>
+        <span>CR: {monster.challenge_rating}</span>{" "}
+        <span>EXP: {formatEXP(monster.exp)}</span>
       </div>
-    </div>
+    </Segment>
   );
 }
 
 function EncounterForm(props) {
-  let { chosenMonsters } = props;
+  let { chosenMonsters, nameEncounter, resetEncounter, partyEXP } = props;
 
   const calculateTotalEXP = (monsters) => {
     let pooledEXP = monsters.map((monster) => monster.exp);
@@ -30,48 +23,64 @@ function EncounterForm(props) {
   };
   const calculateAdjustedEXP = (monsters) => {
     let totalEXP = calculateTotalEXP(monsters);
-    let length = monsters.length
+    let length = monsters.length;
     // debugger
-    if (length === 1){
-        return totalEXP * 1
-    }else if (length === 2){
-        return totalEXP * 1.5
-    }else if (length >= 3 && length <= 6){
-        return totalEXP * 2
-    }else if (length >= 7 && length <= 10){
-        return totalEXP * 2.5
-    }else if (length >= 11 && length <= 14){
-        return totalEXP * 3
-    }else if (length >= 15){
-        return totalEXP * 4
-    }else {
-        return totalEXP
+    if (length === 1) {
+      return totalEXP * 1;
+    } else if (length === 2) {
+      return totalEXP * 1.5;
+    } else if (length >= 3 && length <= 6) {
+      return totalEXP * 2;
+    } else if (length >= 7 && length <= 10) {
+      return totalEXP * 2.5;
+    } else if (length >= 11 && length <= 14) {
+      return totalEXP * 3;
+    } else if (length >= 15) {
+      return totalEXP * 4;
+    } else {
+      return totalEXP;
     }
   };
+  const calculateDifficulty = (monsters) => {
+      let adjustedEXP = calculateAdjustedEXP(monsters)
 
-    console.log('exp total', calculateAdjustedEXP(chosenMonsters), chosenMonsters.length)
+      if (adjustedEXP < partyEXP[1]){
+          return 'Easy'
+      } else if (adjustedEXP >= partyEXP[1] && adjustedEXP < partyEXP[2]){
+          return 'Medium'
+      } else if (adjustedEXP >= partyEXP[2] && adjustedEXP < partyEXP[3]){
+          return 'Hard'
+      } else {
+          return 'Deadly'
+      }
+  }
 
   return (
-    <div className="current-encounter">
-      <h1>Encounter Info</h1>
-      <div className="current-encounter-body">
-        <div className="current-encounter-table">
-          {chosenMonsters.map((mon) => {
-            return currentEncounter(mon);
-          })}
+    <Segment.Group className="current-encounter-cont">
+      <Segment>
+        <Header as="h2">Encounter Info</Header>
+      </Segment>
+      <Segment.Group>
+        <div className="current-encounter-monsters">
+          {chosenMonsters.map((mon) => currentEncounter(mon))}
         </div>
-        <div className="current-encounter-footer">
-          <Divider />
-          <span className="current-encounter-footer total-exp">
-            Total EXP: {formatEXP(calculateTotalEXP(chosenMonsters))}{" "}
-          </span><br/>
-          <span className="current-encounter-footer adjusted-exp">
-            Adjusted EXP: {formatEXP(calculateAdjustedEXP(chosenMonsters))}{" "}
-          </span>
-        </div>
-        <button className="ui button positive">Save Encounter</button>
-      </div>
-    </div>
+      </Segment.Group>
+      <Segment.Group horizontal>
+        <Segment>
+          Total EXP: {formatEXP(calculateTotalEXP(chosenMonsters))}
+        </Segment>
+        <Segment>
+          Adjusted EXP: {formatEXP(calculateAdjustedEXP(chosenMonsters))}
+        </Segment>
+        <Segment>Difficulty: {calculateDifficulty(chosenMonsters)}</Segment>
+      </Segment.Group>
+      <Segment>
+        <Button positive>Create Encounter</Button>
+        <Button onClick={() => resetEncounter()} negative>
+          Reset Encounter
+        </Button>
+      </Segment>
+    </Segment.Group>
   );
 }
 

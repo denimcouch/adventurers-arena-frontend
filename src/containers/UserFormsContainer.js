@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PartyForm from "../components/PartyForm";
-import EncounterForm from '../components/EncounterForm'
+import EncounterForm from "../components/EncounterForm";
 
 class UserFormsContainer extends Component {
   constructor() {
@@ -113,7 +113,12 @@ class UserFormsContainer extends Component {
           setLevel={this.setLevel}
           partyEXP={this.partyEXP(this.state.partySize, this.state.level)}
         />
-        <EncounterForm chosenMonsters={this.props.chosenMonsters} />
+        <EncounterForm
+          chosenMonsters={this.props.chosenMonsters}
+          nameEncounter={this.props.nameEncounter}
+          resetEncounter={this.props.resetEncounter}
+          partyEXP={this.partyEXP(this.state.partySize, this.state.level)}
+        />
       </div>
     );
   }
