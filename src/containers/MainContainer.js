@@ -55,6 +55,12 @@ class MainContainer extends Component {
     .then(user => this.props.updateUser(user))
   };
 
+  deleteEncounter = (encounter) => {
+    fetch(`http://localhost:3000/api/v1/encounters/${encounter.id}`,{method: "DELETE"})
+    .then(res => res.json())
+    .then(user => this.props.updateUser(user))
+  }
+
   showView = () => {
     switch (this.state.view) {
       case "home":
@@ -75,7 +81,7 @@ class MainContainer extends Component {
       case "manage encounters":
         return (
           <>
-            <EncountersContainer user={this.props.user} />
+            <EncountersContainer user={this.props.user} deleteEncounter={this.deleteEncounter} />
           </>
         );
       default:
