@@ -117,6 +117,7 @@ class UserFormsContainer extends Component {
           chosenMonsters={this.props.chosenMonsters}
           nameEncounter={this.props.nameEncounter}
           resetEncounter={this.props.resetEncounter}
+          saveEncounter={this.props.saveEncounter}
           partyEXP={this.partyEXP(this.state.partySize, this.state.level)}
         />
       </div>

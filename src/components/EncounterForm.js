@@ -1,4 +1,5 @@
 import React from "react";
+import SaveEncounterButton from './SaveEncounterButton'
 import { Segment, Header, Button } from "semantic-ui-react";
 import { formatEXP } from "../components/MonsterTable";
 
@@ -15,7 +16,7 @@ function currentEncounter(monster) {
 }
 
 function EncounterForm(props) {
-  let { chosenMonsters, nameEncounter, resetEncounter, partyEXP } = props;
+  let { chosenMonsters, nameEncounter, resetEncounter, saveEncounter, partyEXP } = props;
 
   const calculateTotalEXP = (monsters) => {
     let pooledEXP = monsters.map((monster) => monster.exp);
@@ -24,7 +25,6 @@ function EncounterForm(props) {
   const calculateAdjustedEXP = (monsters) => {
     let totalEXP = calculateTotalEXP(monsters);
     let length = monsters.length;
-    // debugger
     if (length === 1) {
       return totalEXP * 1;
     } else if (length === 2) {
@@ -43,7 +43,6 @@ function EncounterForm(props) {
   };
   const calculateDifficulty = (monsters) => {
       let adjustedEXP = calculateAdjustedEXP(monsters)
-
       if (adjustedEXP < partyEXP[1]){
           return 'Easy'
       } else if (adjustedEXP >= partyEXP[1] && adjustedEXP < partyEXP[2]){
@@ -75,7 +74,7 @@ function EncounterForm(props) {
         <Segment>Difficulty: {calculateDifficulty(chosenMonsters)}</Segment>
       </Segment.Group>
       <Segment>
-        <Button positive>Create Encounter</Button>
+        <SaveEncounterButton nameEncounter={nameEncounter} saveEncounter={saveEncounter} />
         <Button onClick={() => resetEncounter()} negative>
           Reset Encounter
         </Button>
