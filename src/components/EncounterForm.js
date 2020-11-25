@@ -1,22 +1,12 @@
 import React from "react";
 import SaveEncounterButton from './SaveEncounterButton'
-import { Segment, Header, Button } from "semantic-ui-react";
+import { Segment, Header, Button, Icon } from "semantic-ui-react";
 import { formatEXP } from "../components/MonsterTable";
 
-function currentEncounter(monster) {
-  return (
-    <Segment>
-      <Header as="h4">{monster.name}</Header>
-      <div>
-        <span>CR: {monster.challenge_rating}</span>{" "}
-        <span>EXP: {formatEXP(monster.exp)}</span>
-      </div>
-    </Segment>
-  );
-}
+
 
 function EncounterForm(props) {
-  let { chosenMonsters, nameEncounter, resetEncounter, saveEncounter, partyEXP } = props;
+  let { chosenMonsters, nameEncounter, resetEncounter, saveEncounter, patchEncounter, deleteMonFromEncounter, partyEXP, isEdit } = props;
 
   const calculateTotalEXP = (monsters) => {
     let pooledEXP = monsters.map((monster) => monster.exp);
@@ -54,6 +44,21 @@ function EncounterForm(props) {
       }
   }
 
+  function currentEncounter(monster) {
+    return (
+      <Segment>
+        <Header as="h4">{monster.name}</Header>
+        <div>
+          <span>CR: {monster.challenge_rating}</span>{" "}
+          <span>EXP: {formatEXP(monster.exp)}</span>
+        </div>
+        <div>
+          <Button onClick={() => deleteMonFromEncounter(monster)} icon negative><Icon name="delete"/></Button>
+        </div>
+      </Segment>
+    );
+  }
+
   return (
     <Segment.Group className="current-encounter-cont">
       <Segment>
@@ -78,6 +83,7 @@ function EncounterForm(props) {
         <Button onClick={() => resetEncounter()} negative>
           Reset Encounter
         </Button>
+        {isEdit ? <Button onClick={() => patchEncounter()} primary>Save Edit</Button> : null}
       </Segment>
     </Segment.Group>
   );
