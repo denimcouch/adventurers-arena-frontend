@@ -69,6 +69,12 @@ class App extends Component {
       });
   };
 
+  updateUser = (user) => {
+    this.setState({
+      user
+    })
+  }
+
   render() {
     return (
       <Router>
@@ -86,7 +92,7 @@ class App extends Component {
               )}{" "}
             </Route>
             <Route path="/main">
-              <MainContainer user={this.state.user} monsters={this.state.monsters} />{" "}
+              <MainContainer user={this.state.user} monsters={this.state.monsters} updateUser={this.updateUser} />{" "}
             </Route>
           </Switch>
         </div>

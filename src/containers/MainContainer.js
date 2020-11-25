@@ -50,7 +50,9 @@ class MainContainer extends Component {
       },
       body: JSON.stringify(encounterObj),
     };
-    fetch("http://localhost:3000/api/v1/encounters", encounterOptions);
+    fetch("http://localhost:3000/api/v1/encounters", encounterOptions)
+    .then(res => res.json())
+    .then(user => this.props.updateUser(user))
   };
 
   showView = () => {
