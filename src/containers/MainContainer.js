@@ -162,7 +162,7 @@ class MainContainer extends Component {
     let { monsters } = this.props;
     return (
       <div className="main-container">
-        <NavBar changeView={this.changeView} />
+        <NavBar changeView={this.changeView} logOutUser={this.props.logOutUser} />
         {this.showView()}
         {/* <UserFormsContainer chosenMonsters={this.state.chosenMonsters} nameEncounter={this.nameEncounter} resetEncounter={this.resetEncounter} saveEncounter={this.saveEncounter} />
         <MonstersContainer monsters={monsters} chooseMonster={this.chooseMonster} /> */}

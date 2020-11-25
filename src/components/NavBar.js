@@ -1,8 +1,9 @@
 import React from "react";
 import { Header, Menu } from "semantic-ui-react";
+import { NavLink } from 'react-router-dom'
 
 function NavBar(props) {
-  let { changeView } = props;
+  let { changeView, logOutUser } = props;
   return (
     <div>
       <div className="navbar-header">
@@ -19,8 +20,10 @@ function NavBar(props) {
           >
             Manage Encounters
           </Menu.Item>
-          <Menu.Item id="log out" onClick={(e) => changeView(e.target.id)}>
-            Log out
+          <Menu.Item id="log out">
+            <NavLink to='/' onClick={() => logOutUser()}>
+              Log out
+            </NavLink>
           </Menu.Item>
         </Menu>
       </div>
