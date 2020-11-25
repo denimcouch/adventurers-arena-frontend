@@ -1,16 +1,29 @@
+body {
+    background-color: #FDF1DC;
+}
+
 .log-in-container {
   
 }
 
+.user-forms-container{
+    width: 500px;
+    padding: 10px;
+    display: inline-block;
+}
+
 .monsters-container{
-    margin-left: 60%;
+    width: 750px;
+    margin-left: 50%;
+    margin-top: -15%;
     background-color: #FDF1DC;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .search-bar-container{
     width: 700px;
     padding: 10px;
-    
 }
 
 .filters{

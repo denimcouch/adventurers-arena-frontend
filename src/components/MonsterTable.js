@@ -2,8 +2,23 @@ import React from "react";
 import { Header, Table, Button } from "semantic-ui-react";
 import Monster from './Monster'
 
+export function formatEXP(number) {
+  let numString = number.toString()
+  
+  switch(numString.length){
+      case 4:
+          return numString.slice(0,1) + ',' + numString.slice(1);
+      case 5:
+          return numString.slice(0,2) + ',' + numString.slice(2);
+      case 6:
+          return numString.slice(0,3) + ',' + numString.slice(3);
+      default:
+          return numString
+  }
+}
+
 function MonsterTable(props) {
-  let { monsters } = props;
+  let { monsters, chooseMonster } = props;
 
   function capitalizeWords(string) {
     const array = string.split(" ");
@@ -12,20 +27,7 @@ function MonsterTable(props) {
       .join(" ");
   }
 
-  function formatEXP(number) {
-    let numString = number.toString()
-    
-    switch(numString.length){
-        case 4:
-            return numString.slice(0,1) + ',' + numString.slice(1);
-        case 5:
-            return numString.slice(0,2) + ',' + numString.slice(2);
-        case 6:
-            return numString.slice(0,3) + ',' + numString.slice(3);
-        default:
-            return numString
-    }
-  }
+  
 
   return (
     <div className="monster-table-container">
@@ -47,11 +49,11 @@ function MonsterTable(props) {
               return (
                 <Table.Row key={monster.id}>
                   <Table.Cell>
-                    <Button size="medium" color="green">
+                    <Button size="medium" color="green" onClick={(e) => chooseMonster(monster)}>
                       +
                     </Button>{" "}
                   </Table.Cell>
-                  <Table.Cell singleLine>{<Monster monster={monster} xp={formatEXP(monster.exp)} />}</Table.Cell>
+                  <Table.Cell singleLine>{<Monster monster={monster} xp={formatEXP(monster.exp)} key={monster.id} />}</Table.Cell>
                   <Table.Cell>{monster.challenge_rating}</Table.Cell>
                   <Table.Cell>{capitalizeWords(monster.mon_type)}</Table.Cell>
                   <Table.Cell>{formatEXP(monster.exp)}</Table.Cell>

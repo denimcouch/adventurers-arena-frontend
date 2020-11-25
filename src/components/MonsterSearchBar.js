@@ -25,7 +25,7 @@ function MonsterSearchBar(props) {
               <option value={size}>{size}</option>
             ))}
           </select>
-        </label>
+        </label>{' '}
         
         <label>
           <strong>Filter by Type: </strong>

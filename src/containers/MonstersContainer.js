@@ -99,7 +99,7 @@ class MonstersContainer extends Component {
           crOptions={this.crOptions()}
           typeOptions={this.typeOptions()}
         />
-        <MonsterTable monsters={monsters} />
+        <MonsterTable monsters={monsters} chooseMonster={this.props.chooseMonster} />
       </div>
     );
   }
