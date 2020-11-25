@@ -118,7 +118,10 @@ class UserFormsContainer extends Component {
           nameEncounter={this.props.nameEncounter}
           resetEncounter={this.props.resetEncounter}
           saveEncounter={this.props.saveEncounter}
+          patchEncounter={this.props.patchEncounter}
+          deleteMonFromEncounter={this.props.deleteMonFromEncounter}
           partyEXP={this.partyEXP(this.state.partySize, this.state.level)}
+          isEdit={this.props.isEdit}
         />
       </div>
     );
