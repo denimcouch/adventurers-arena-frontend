@@ -49,7 +49,7 @@ class App extends Component {
         // console.log("New user from POST", user);
         debugger;
         this.setState({
-          loggedIn: !this.state.loggedIn,
+          loggedIn: true,
           user,
         });
       });
@@ -63,7 +63,7 @@ class App extends Component {
         // console.log("User from logInUser", userData);
         let user = userData[0];
         this.setState({
-          loggedIn: !this.state.loggedIn,
+          loggedIn: true,
           user,
         });
       });
@@ -71,6 +71,7 @@ class App extends Component {
 
   logOutUser = () => {
     this.setState({
+      loggedIn: false,
       user: {},
     });
   };
