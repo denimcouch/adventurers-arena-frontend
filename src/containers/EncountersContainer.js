@@ -4,8 +4,7 @@ import { formatEXP } from "../components/MonsterTable";
 import { Button, Divider } from "semantic-ui-react";
 
 function EncountersContainer(props) {
-  let { user, deleteEncounter } = props;
-  console.log(user.encounters);
+  let { user, editEncounter, deleteEncounter } = props;
 
   return (
     <div>
@@ -29,7 +28,7 @@ function EncountersContainer(props) {
               </div>
               <div className="user-encounter-actions">
                 <Divider />
-                <Button primary>Edit Encounter</Button>
+                <Button onClick={() => editEncounter(encounter)} primary>Edit Encounter</Button>
                 <Button onClick={() => deleteEncounter(encounter)} negative>Delete Encounter</Button>
               </div>
             </div>

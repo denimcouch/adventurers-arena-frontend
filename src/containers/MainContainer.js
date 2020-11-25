@@ -51,15 +51,25 @@ class MainContainer extends Component {
       body: JSON.stringify(encounterObj),
     };
     fetch("http://localhost:3000/api/v1/encounters", encounterOptions)
-    .then(res => res.json())
-    .then(user => this.props.updateUser(user))
+      .then((res) => res.json())
+      .then((user) => this.props.updateUser(user));
   };
 
   deleteEncounter = (encounter) => {
-    fetch(`http://localhost:3000/api/v1/encounters/${encounter.id}`,{method: "DELETE"})
-    .then(res => res.json())
-    .then(user => this.props.updateUser(user))
-  }
+    fetch(`http://localhost:3000/api/v1/encounters/${encounter.id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((user) => this.props.updateUser(user));
+  };
+
+  editEncounter = (encounter) => {
+    this.setState({
+      view: "home",
+      encounterName: encounter.name,
+      chosenMonsters: [...this.state.chosenMonsters, ...encounter.monsters],
+    });
+  };
 
   showView = () => {
     switch (this.state.view) {
@@ -81,7 +91,11 @@ class MainContainer extends Component {
       case "manage encounters":
         return (
           <>
-            <EncountersContainer user={this.props.user} deleteEncounter={this.deleteEncounter} />
+            <EncountersContainer
+              user={this.props.user}
+              editEncounter={this.editEncounter}
+              deleteEncounter={this.deleteEncounter}
+            />
           </>
         );
       default:
