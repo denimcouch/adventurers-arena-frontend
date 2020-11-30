@@ -30,21 +30,52 @@
 .ui.segment.log-in-container{
   width: 800px;
 }
-
-.user-forms-container{
-    width: 500px;
+.main-container {
+    width: 1500px;
+    height: 850px;
+    background-color: rgba(75, 4, 141, 0.733);
+    border-style: ridge;
+    border-width: 10px;
+    border-color: rgba(109, 8, 8, 0.932);
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    grid-column-gap: 75px;
+    justify-content: center;
+    align-content: center;
     padding: 10px;
-    display: inline-block;
 }
 
-.monsters-container{
-    width: 750px;
-    margin-left: 50%;
-    margin-top: -15%;
+.user-forms-container{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    width: 500px;
     background-color: #FDF1DC;
+    border-style: ridge;
+    border-width: 7px;
+    border-color: orange;
     border-radius: 5px;
     padding: 10px;
 }
+
+.monsters-container{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    width: 750px;
+    height: 750px;
+    background-color: #FDF1DC;
+    border-style: ridge;
+    border-width: 7px;
+    border-color: orange;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 
 .search-bar-container{
     width: 700px;
