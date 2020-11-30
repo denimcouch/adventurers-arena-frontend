@@ -1,9 +1,34 @@
-body {
-    background-color: #FDF1DC;
+#app {
+    background-image: url('./assets/background.jpg');
+    background-size: cover;
+    background-color: rgba(49, 2, 2, 0.795);
+    background-blend-mode: overlay;
+    height: 1000px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
-.log-in-container {
-  
+.log-in-div {
+  width: 1000px;
+  height: 600px;
+  background-color: rgba(75, 4, 141, 0.733);
+  border-style: inset;
+  border-width: 10px;
+  border-color: rgba(109, 8, 8, 0.932);
+  border-radius: 5px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.log-in-header {
+  width: 800px;
+  font-size: 50px;
+  color: #FDF1DC;
+  text-align: center;
+}
+.ui.segment.log-in-container{
+  width: 800px;
 }
 
 .user-forms-container{

@@ -1,17 +1,17 @@
 import React from "react";
 import LogIn from "../components/LogIn";
 import SignUp from "../components/SignUp";
-import { Divider, Grid, Header, Segment } from "semantic-ui-react";
+import { Divider, Grid } from "semantic-ui-react";
 
 function LogInContainer(props) {
   const { signUpUser, logInUser } = props;
 
   return (
     <div className="log-in-div">
-      <Header className="app-header" as="h1" size='huge' dividing>
+      <h1 className="log-in-header">
         Adventurer's Arena
-      </Header>
-      <Segment className="log-in-container">
+      </h1>
+      <div className="ui segment log-in-container">
         <Grid columns={2} relaxed="very">
           <Grid.Column>
             <LogIn logInUser={logInUser} />
@@ -22,7 +22,7 @@ function LogInContainer(props) {
           </Grid.Column>
         </Grid>
         <Divider vertical>Or</Divider>
-      </Segment>
+      </div>
     </div>
   );
 }
