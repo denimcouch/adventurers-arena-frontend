@@ -160,7 +160,7 @@ class MainContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div id='main-div'>
         <NavBar changeView={this.changeView} logOutUser={this.props.logOutUser} />
         <div className="main-container">
         {this.showView()}
