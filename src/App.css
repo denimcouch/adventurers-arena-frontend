@@ -95,49 +95,25 @@
   background-color: rgba(48, 0, 184, 0.75);
   color: white;
   transition-duration: 0.4s;
-  border-radius: 10px;
+  border-radius: 5px;
   border-style: ridge ridge ridge ridge;
-  border-width: 7px 10px 10px 7px;
+  border-width: 5px 7px 7px 5px;
   border-color: rgba(109, 8, 8, 0.932);
   border-radius: 5px;
   padding: 5px;
 }
 .navbar-menu-button:hover {
-  background-color:white; /* Green */
+  background-color: white; /* Green */
   color: black;
-  
 }
-
-/* 
-.ui.button {
-    cursor: pointer;
-    display: inline-block;
-    min-height: 1em;
-    outline: 0;
-    border: none;
-    vertical-align: baseline;
-    background: #e0e1e2 none;
-    color: rgba(0,0,0,.6);
-    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-    margin: 0 .25em 0 0;
-    padding: .78571429em 1.5em .78571429em;
-    text-transform: none;
-    text-shadow: none;
-    font-weight: 700;
-    line-height: 1em;
-    font-style: normal;
-    text-align: center;
-    text-decoration: none;
-    border-radius: .28571429rem;
-    box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
-    -webkit-user-select: none;
-    user-select: none;
-    transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
-    will-change: '';
-    -webkit-tap-highlight-color: transparent;
+#log-out{
+  height: 55px;
+  width: 200px;
+  color: white;
 }
-.navbar-menu-button {
- */
+#log-out:hover{
+  color: black;
+}
 
 .main-container {
   grid-row-start: 2;
@@ -165,12 +141,14 @@
   padding: 10px;
 }
 .user-forms-container {
+  background-image: url("./assets/old-parchment-texture-background.jpg");
+  background-blend-mode: overlay;
   grid-row-start: 2;
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 1;
   width: 500px;
-  background-color: #fdf1dc;
+  background-color: #fdf1dcbd;
   border-style: ridge;
   border-width: 7px;
   border-color: orange;
@@ -179,13 +157,15 @@
   box-shadow: 10px 10px 5px black;
 }
 .monsters-container {
+  background-image: url("./assets/old-parchment-texture-background.jpg");
+  background-blend-mode: overlay;
   grid-row-start: 2;
   grid-row-end: 2;
   grid-column-start: 2;
   grid-column-end: 2;
   width: 750px;
   height: 750px;
-  background-color: #fdf1dc;
+  background-color: #fdf1dcbd;
   border-style: ridge;
   border-width: 7px;
   border-color: orange;
@@ -214,4 +194,44 @@
   width: 700px;
   height: 500px;
   overflow-y: scroll;
+}
+
+.user-encounters {
+  background-image: url("./assets/old-parchment-texture-background.jpg");
+  background-blend-mode: overlay;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  width: 1200px;
+  height: 750px;
+  background-color: #fdf1dcbd;
+  border-style: ridge;
+  border-width: 7px;
+  border-color: orange;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 10px 10px 5px black;
+  display: grid;
+  grid-template-columns: 400px;
+  grid-template-rows: 50px auto;
+  grid-row-gap: 20px;
+  justify-content: left;
+  align-content: flex-start;
+  overflow-y: scroll;
+  padding: 20px;
+}
+.user-encounters-header{
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+.user-encounter-container{
+  background-color: #020100a4;
+  color: white;
+  border-style: ridge;
+  border-width: 7px;
+  border-color: orange;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 10px 10px 5px black;
 }

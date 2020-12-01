@@ -21,7 +21,7 @@ function NavBar(props) {
             Manage Encounters
           </button >
           <button className=' navbar-menu-button' id="log out" onClick={() => logOutUser()}>
-            <NavLink to='/' >
+            <NavLink to='/' id="log-out" onClick={() => logOutUser()} >
               Log out
             </NavLink>
           </button >
