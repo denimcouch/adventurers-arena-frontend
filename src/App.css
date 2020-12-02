@@ -287,6 +287,7 @@ h1 h2 h3 h4 {
   grid-column-start: 2;
   grid-column-end: 2;
 }
+
 .delete-btn{
   width: 40px;
   grid-column-start: 3;
@@ -294,7 +295,14 @@ h1 h2 h3 h4 {
   grid-row-start: 1;
   grid-row-end: 1;
 }
-
+.stat-block-header{
+  font-size: 60px;
+}
+.stat-block-info{
+  font-size: 20px;
+  text-transform: capitalize;
+  border-bottom: 3px solid rgb(172, 2, 2);
+}
 
 /*
   1. adjust the information in .encounter-monster to fit nicely in the div
