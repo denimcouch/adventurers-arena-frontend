@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton&display=swap');
+
 #app {
   background-image: url("./assets/background.jpg");
   background-size: cover;
@@ -7,6 +10,9 @@
   display: grid;
   justify-content: center;
   align-content: center;
+}
+h1 h2 h3 h4 {
+  font-family: 'Neuton', serif !important;
 }
 
 .log-in-div {
@@ -27,10 +33,14 @@
   display: grid;
   justify-content: center;
   align-content: center;
+ 
 }
 .log-in-header {
   width: 800px;
-  font-size: 50px;
+  font-family: 'Pirata One', cursive;
+  letter-spacing: 3px;
+  font-size: 70px;
+  text-shadow: 3px 3px #000000;
   color: #fdf1dc;
   text-align: center;
 }
@@ -51,7 +61,7 @@
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: auto auto;
-  grid-column-gap: 270px;
+  grid-column-gap: 370px;
   align-content: flex-end;
   background: rgba(2, 0, 36, 0.75);
   background: linear-gradient(
@@ -68,13 +78,19 @@
   padding: 5px;
   font-size: 50px;
   color: #fdf1dc;
+  
 }
 .navbar-header-cont {
   grid-column-start: 1;
   grid-column-end: 1;
 }
 .navbar-header {
-  font-size: 40px;
+  font-family: 'Pirata One', cursive;
+  letter-spacing: 3px;
+  font-size: 50px;
+  color: #fdf1dc;
+  text-shadow: 3px 3px #000000;
+  text-align: center;
   vertical-align: bottom;
 }
 .navbar-menu {
@@ -92,18 +108,19 @@
   height: 55px;
   width: 200px;
   font-size: 18px;
-  background-color: rgba(48, 0, 184, 0.75);
+  background-color: rgba(59, 0, 223, 0.75);
   color: white;
+  animation-name: pulse;
   transition-duration: 0.4s;
   border-radius: 5px;
-  border-style: ridge ridge ridge ridge;
-  border-width: 5px 7px 7px 5px;
-  border-color: rgba(109, 8, 8, 0.932);
+  border-style: ridge;
+  border-width: 5px;
+  border-color: rgba(47, 0, 177, 0.986);
   border-radius: 5px;
   padding: 5px;
 }
 .navbar-menu-button:hover {
-  background-color: white; /* Green */
+  background-color: white;
   color: black;
 }
 #log-out{
@@ -228,10 +245,58 @@
 .user-encounter-container{
   background-color: #020100a4;
   color: white;
-  border-style: ridge;
+  border-style: solid;
   border-width: 7px;
-  border-color: orange;
+  border-color: rgba(35, 0, 133, 0.986);
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 10px 10px 5px black;
+  box-shadow: 5px 5px 5px black;
 }
+
+.current-encounter-monsters{
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 10px;
+  align-items: flex-start;
+  height: 250px;
+  overflow-y: scroll;
+}
+.encounter-monster{
+  width: 400px;
+  height: 100px;
+  background-color: #02010081;
+  color: white;
+  border-style: solid;
+  border-width: 7px;
+  border-color: rgba(35, 0, 133, 0.986);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px black;
+  display: grid;
+  grid-template-columns: auto auto 50px;
+  align-content: flex-start;
+}
+.encounter-monster-header{
+  font-size: 18px;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.encounter-monster-info{
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+.delete-btn{
+  width: 40px;
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+
+/*
+  1. adjust the information in .encounter-monster to fit nicely in the div
+  2. Organize the #encounter-info-cont as a grid and organize the info
+ */

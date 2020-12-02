@@ -30,9 +30,8 @@ class PartyForm extends Component {
   render() {
     let partyEXP = this.props.partyEXP;
     return (
-      <div className="party-form-container">
-        <h1>Party Info</h1>
-
+      <div className="ui segment party-form-container">
+        <h2>Party Info</h2>
         <div>
           <label>
             <strong>Party Size: </strong>
@@ -48,7 +47,6 @@ class PartyForm extends Component {
               })}
             </select>
           </label>{" "}
-          
           <label>
             <strong>Level: </strong>
             <select onChange={(e) => this.props.setLevel(e.target.value)}>

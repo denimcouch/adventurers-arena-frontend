@@ -8,7 +8,7 @@ function NavBar(props) {
   return (
     <div className='navbar'>
       <div className="navbar-header-cont">
-        <h1 className='navbar-header'>Adventurer's Arena</h1>
+        <h1 className='navbar-header'>The Bestiary</h1>
       </div>
       <div className="navbar-menu">
           <button className=' navbar-menu-button' id="home" onClick={(e) => changeView(e.target.id)}>

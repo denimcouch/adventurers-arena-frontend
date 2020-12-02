@@ -9,7 +9,7 @@ function LogInContainer(props) {
   return (
     <div className="log-in-div">
       <h1 className="log-in-header">
-        Adventurer's Arena
+        The Bestiary
       </h1>
       <div className="ui segment log-in-container">
         <Grid columns={2} relaxed="very">
