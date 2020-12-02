@@ -7,12 +7,12 @@ function EncountersContainer(props) {
   let { user, editEncounter, deleteEncounter } = props;
 
   return (
-    <div>
-      <h1>{user.username}'s Encounters</h1>
+    <div className='user-encounters'>
+      <h1 className='user-encounters-header'>{user.username}'s Encounters</h1>
       {user.encounters.map((encounter) => {
         return (
-          <>
-            <div className="user-encounter-container">
+          <div className="user-encounter-container" >
+            <div >
               <h2 className="user-encounter-title">{encounter.name}</h2>
               <div className="user-encounter-info">
                 {encounter.monsters.map((mon) => {
@@ -32,11 +32,10 @@ function EncountersContainer(props) {
                 <Button onClick={() => deleteEncounter(encounter)} negative>Delete Encounter</Button>
               </div>
             </div>
-            <br />
-            <Divider />
-          </>
+          </div>
         );
-      })}
+       })
+      }
     </div>
   );
 }

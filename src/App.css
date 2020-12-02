@@ -1,45 +1,322 @@
-body {
-    background-color: #FDF1DC;
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton&display=swap');
+
+#app {
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+  background-color: rgba(37, 1, 1, 0.733);
+  background-blend-mode: overlay;
+  height: 1000px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+h1 h2 h3 h4 {
+  font-family: 'Neuton', serif !important;
 }
 
-.log-in-container {
+.log-in-div {
+  width: 1000px;
+  height: 600px;
+  background: rgba(2, 0, 36, 0.75);
+  background: linear-gradient(
+    345deg,
+    rgba(2, 0, 36, 0.75) 0%,
+    rgba(6, 5, 79, 0.75) 33%,
+    rgba(2, 2, 99, 0.75) 57%,
+    rgba(48, 0, 184, 0.75) 79%
+  );
+  border-style: inset;
+  border-width: 10px;
+  border-color: rgba(109, 8, 8, 0.932);
+  border-radius: 5px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+ 
+}
+.log-in-header {
+  width: 800px;
+  font-family: 'Pirata One', cursive;
+  letter-spacing: 3px;
+  font-size: 70px;
+  text-shadow: 3px 3px #000000;
+  color: #fdf1dc;
+  text-align: center;
+}
+.ui.segment.log-in-container {
+  width: 800px;
+}
+
+#main-div {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-row-gap: 15px;
+}
+
+.navbar {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  height: 100px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+  grid-column-gap: 370px;
+  align-content: flex-end;
+  background: rgba(2, 0, 36, 0.75);
+  background: linear-gradient(
+    345deg,
+    rgba(2, 0, 36, 0.75) 0%,
+    rgba(6, 5, 79, 0.75) 33%,
+    rgba(2, 2, 99, 0.75) 57%,
+    rgba(48, 0, 184, 0.75) 79%
+  );
+  border-style: ridge ridge ridge ridge;
+  border-width: 7px 10px 10px 7px;
+  border-color: rgba(109, 8, 8, 0.932);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 50px;
+  color: #fdf1dc;
   
 }
-
-.user-forms-container{
-    width: 500px;
-    padding: 10px;
-    display: inline-block;
+.navbar-header-cont {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+.navbar-header {
+  font-family: 'Pirata One', cursive;
+  letter-spacing: 3px;
+  font-size: 50px;
+  color: #fdf1dc;
+  text-shadow: 3px 3px #000000;
+  text-align: center;
+  vertical-align: bottom;
+}
+.navbar-menu {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  height: 60px;
+  width: 800px;
+  display: grid;
+  justify-content: left;
+  align-content: center;
+  grid-template-columns: 100px 100px 100px;
+  grid-column-gap: 110px;
+}
+.navbar-menu-button {
+  height: 55px;
+  width: 200px;
+  font-size: 18px;
+  background-color: rgba(59, 0, 223, 0.75);
+  color: white;
+  animation-name: pulse;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  border-style: ridge;
+  border-width: 5px;
+  border-color: rgba(47, 0, 177, 0.986);
+  border-radius: 5px;
+  padding: 5px;
+}
+.navbar-menu-button:hover {
+  background-color: white;
+  color: black;
+}
+#log-out{
+  height: 55px;
+  width: 200px;
+  color: white;
+}
+#log-out:hover{
+  color: black;
 }
 
-.monsters-container{
-    width: 750px;
-    margin-left: 50%;
-    margin-top: -15%;
-    background-color: #FDF1DC;
-    border-radius: 5px;
-    padding: 10px;
+.main-container {
+  grid-row-start: 2;
+  grid-row-end: 2;
+  width: 1500px;
+  height: 850px;
+  background: rgba(2, 0, 36, 0.75);
+  background: linear-gradient(
+    345deg,
+    rgba(2, 0, 36, 0.75) 0%,
+    rgba(6, 5, 79, 0.75) 33%,
+    rgba(2, 2, 99, 0.75) 57%,
+    rgba(48, 0, 184, 0.75) 79%
+  );
+  border-style: ridge;
+  border-width: 7px 10px 10px 7px;
+  border-color: rgba(109, 8, 8, 0.932);
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+  grid-column-gap: 75px;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+.user-forms-container {
+  background-image: url("./assets/old-parchment-texture-background.jpg");
+  background-blend-mode: overlay;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  width: 500px;
+  background-color: #fdf1dcbd;
+  border-style: ridge;
+  border-width: 7px;
+  border-color: orange;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 10px 10px 5px black;
+}
+.monsters-container {
+  background-image: url("./assets/old-parchment-texture-background.jpg");
+  background-blend-mode: overlay;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  width: 750px;
+  height: 750px;
+  background-color: #fdf1dcbd;
+  border-style: ridge;
+  border-width: 7px;
+  border-color: orange;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 10px 10px 5px black;
 }
 
-.search-bar-container{
-    width: 700px;
-    padding: 10px;
+.search-bar-container {
+  width: 700px;
+  padding: 10px;
 }
 
-.filters{
-    width: 700px;
+.filters {
+  width: 700px;
 }
-.prompt{
-    width: 500px;
-}
-
-.monster-table-container{
-    padding: 10px;
+.prompt {
+  width: 500px;
 }
 
-.monster-table{
-    width: 700px;
-    height: 500px;
-    overflow-y: scroll;
+.monster-table-container {
+  padding: 10px;
 }
 
+.monster-table {
+  width: 700px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.user-encounters {
+  background-image: url("./assets/old-parchment-texture-background.jpg");
+  background-blend-mode: overlay;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  width: 1200px;
+  height: 750px;
+  background-color: #fdf1dcbd;
+  border-style: ridge;
+  border-width: 7px;
+  border-color: orange;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 10px 10px 5px black;
+  display: grid;
+  grid-template-columns: 400px;
+  grid-template-rows: 50px auto;
+  grid-row-gap: 20px;
+  justify-content: left;
+  align-content: flex-start;
+  overflow-y: scroll;
+  padding: 20px;
+}
+.user-encounters-header{
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+.user-encounter-container{
+  background-color: #020100a4;
+  color: white;
+  border-style: solid;
+  border-width: 7px;
+  border-color: rgba(35, 0, 133, 0.986);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px black;
+}
+
+.current-encounter-monsters{
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 10px;
+  align-items: flex-start;
+  height: 250px;
+  overflow-y: scroll;
+}
+.encounter-monster{
+  width: 400px;
+  height: 100px;
+  background-color: #02010081;
+  color: white;
+  border-style: solid;
+  border-width: 7px;
+  border-color: rgba(35, 0, 133, 0.986);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px black;
+  display: grid;
+  grid-template-columns: auto auto 50px;
+  align-content: flex-start;
+}
+.encounter-monster-header{
+  font-size: 18px;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.encounter-monster-info{
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+#encounter-info-cont{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.encounter-info{
+  font-size: 16px;
+  width: 200px;
+  height: 40px;
+  border-color: black;
+  border-width: 2px;
+}
+
+.delete-btn{
+  width: 40px;
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.stat-block-header{
+  font-size: 60px;
+}
+.stat-block-info{
+  font-size: 20px;
+  text-transform: capitalize;
+  border-bottom: 3px solid rgb(172, 2, 2);
+}
+
+/*
+  1. adjust the information in .encounter-monster to fit nicely in the div
+  2. Organize the #encounter-info-cont as a grid and organize the info
+ */

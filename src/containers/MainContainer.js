@@ -159,14 +159,14 @@ class MainContainer extends Component {
   };
 
   render() {
-    let { monsters } = this.props;
     return (
-      <div className="main-container">
+      <div id='main-div'>
         <NavBar changeView={this.changeView} logOutUser={this.props.logOutUser} />
+        <div className="main-container">
         {this.showView()}
-        {/* <UserFormsContainer chosenMonsters={this.state.chosenMonsters} nameEncounter={this.nameEncounter} resetEncounter={this.resetEncounter} saveEncounter={this.saveEncounter} />
-        <MonstersContainer monsters={monsters} chooseMonster={this.chooseMonster} /> */}
+        </div>
       </div>
+      
     );
   }
 }

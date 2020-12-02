@@ -60,7 +60,7 @@ class App extends Component {
     fetch(usersUrl + `/login/${username}`)
       .then((res) => res.json())
       .then((userData) => {
-        // console.log("User from logInUser", userData);
+        console.log("User from logInUser", userData);
         let user = userData[0];
         this.setState({
           loggedIn: true,
@@ -85,7 +85,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div id='app'>
           <Switch>
             <Route exact path="/">
               {" "}

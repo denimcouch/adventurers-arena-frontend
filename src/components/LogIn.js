@@ -32,7 +32,7 @@ class LogIn extends Component {
   render() {
     return (
       <div>
-        <h1>LogIn</h1>
+        <h1>Log In</h1>
         <Form id="log-in-form" onSubmit={(e) => this.handleSubmit(e)} >
           <Form.Field>
             <label>Username</label>
